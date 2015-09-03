@@ -1,0 +1,2 @@
+class AviatorsController < ApplicationController
+end
