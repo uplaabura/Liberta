@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	
-	http_basic_authenticate_with name: "LibertaTest", password: "Test1", except: [:index, :show]
+	http_basic_authenticate_with name: "LibertaTest", password: "Test", except: [:index, :show]
 
 	def index
     	@articles = Article.all
@@ -14,35 +14,29 @@ class ArticlesController < ApplicationController
 		@article = Article.new
 	end 
 
-	def edit
-		@article = Article.find(params[:id])
-	end
-
-
-	# database methods
 	def create
 		#render plain: params[:article].inspect
 		#@article = Article.new(params[:article])
 		@article = Article.new(article_params)
 
-		#@article.save
-		#redirect_to @article
-
-		#add validations
 		if @article.save
-		  redirect_to @article
+		  redirect_to article_path(@article)
 		else
-		  render 'new'
+		  render 'articles/new'
 		end
 	end 
+
+	def edit
+		@article = Article.find(params[:id])
+	end
 
 	def update
 		@article = Article.find(params[:id])
 
 		if @article.update(article_params)
-			redirect_to @article
+			redirect_to article_path(@article)
 		else
-			render 'edit'
+			render 'articles/edit'
 		end
 	end
 
