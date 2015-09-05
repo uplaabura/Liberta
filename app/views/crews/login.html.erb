@@ -1,0 +1,5 @@
+
+<%= image_tag @crew['picture']['data']['url'].to_s %>
+<%= @crew['name'] %>
+
+<%= link_to "Signout", destroy_crew_session_path, method: :delete %>

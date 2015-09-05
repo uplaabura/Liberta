@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+
+  #root to: 'crews#index', via: :get
+  get 'auth/facebook', as: "auth_provider"
+  get 'auth/facebook/callback', to: 'crews#login'
+
   #devise for users functioning (crew)
   devise_for :crews
 
-  #Omniauth for facebook
+  # Omniauth for facebook
   #get '/auth/:facebook/callback', to: 'sessions#create'
 
   #concern :postable do
@@ -22,7 +27,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  #root 'home#index'
+  root 'crews#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
