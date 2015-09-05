@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  
+  #devise for users functioning (crew)
+  devise_for :crews
+
+  #Omniauth for facebook
+  #get '/auth/:facebook/callback', to: 'sessions#create'
+
   #concern :postable do
     resources :articles do
       resources :comments
