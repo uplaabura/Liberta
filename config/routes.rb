@@ -1,34 +1,36 @@
 Rails.application.routes.draw do
 
-
   #root to: 'crews#index', via: :get
-  get 'auth/facebook', as: "auth_provider"
-  get 'auth/facebook/callback', to: 'crews#login'
+  #get 'auth/facebook', as: "auth_provider"
+  #get 'auth/facebook/callback', to: 'crews#login'
 
   #devise for users functioning (crew)
-  devise_for :crews
+  devise_for :crews, :controllers => { :omniauth_callbacks => "facebook_callbacks" }
+
+  devise_scope :crew do
+    get 'sign_in', :to => 'devise/sessions#new', :as => :new_crew_session_path
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_crew_session_path
+  end
+  
+  #devise_scope :crew do
+    #delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session_path
+  #end
 
   # Omniauth for facebook
   #get '/auth/:facebook/callback', to: 'sessions#create'
-
-  #concern :postable do
-    resources :articles do
-      resources :comments
-      #resource :like
-      #resource :grade
-    end
-  #end
-
-  #namespace :aviators do  
-  #end
-
-
+  
+  resources :articles do
+    resources :comments
+    #resource :like
+    #resource :grade
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   #root 'home#index'
-  root 'crews#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
