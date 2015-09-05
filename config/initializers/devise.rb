@@ -12,7 +12,8 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  #config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'LibertaAdmin@liberta.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -259,4 +260,21 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # Omniauth-facebook settings
+  # Load ENV var FACEBOOK_CONFIG from facebook.yml
+  ##FACEBOOK_CONFIG = YAML.load_file("#{::Rails.root}/config/facebook.yml")[::Rails.env]
+  # Pass provider to RACK
+  ##provider :facebook, 
+    # Retrive info in ENV variables
+    ##FACEBOOK_CONFIG['app_id'], 
+    ##FACEBOOK_CONFIG['secret'],
+
+    # request permissions from facebook
+    # https://developers.facebook.com/docs/facebook-login/permissions/v2.4#reference
+    ##{ :scope => 'public_profile, user_about_me', 
+    ##}
+
+  #config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: "email"
+
 end
