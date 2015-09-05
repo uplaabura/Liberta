@@ -5,7 +5,7 @@ class CrewsController < ApplicationController
   end
 
   def login
-    @crew = Crew.koala(request.env['omniauth.auth']['credentials'])
+    #@crew = Crew.koala(request.env['omniauth.auth']['credentials'])
   end
 
 end
