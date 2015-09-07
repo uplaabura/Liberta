@@ -4,7 +4,7 @@
     <th>Text</th>
   </tr>
  
-  <% @articles.each do |a| %>
+  <% @all_articles.each do |a| %>
     <tr>
       <td><%= a.title %></td>
       <td><%= a.text %></td>
@@ -14,7 +14,7 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
-  <% end %>
+  <% end %>  
 
   <%= link_to 'Home', root_path %>
 </table>

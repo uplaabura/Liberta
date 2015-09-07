@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'therubyracer'
+# Authentication solution
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+# Facebook API lib
+gem "koala", "~> 2.2"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

@@ -1,14 +1,14 @@
 class ArticlesController < ApplicationController
 	
-	http_basic_authenticate_with name: "LibertaTest", password: "Test", except: [:index, :show]
+	#http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
 
 	def index
-    	@articles = Article.all
-  	end
+    @all_articles = Article.all
+  end
 
 	def show
-    	@article = Article.find(params[:id])
-  	end
+    @article = Article.find(params[:id])
+  end
 
 	def new
 		@article = Article.new

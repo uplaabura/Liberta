@@ -1,23 +1,37 @@
 Rails.application.routes.draw do
 
+  #Koala approach
+  ##root to: 'crews#index', via: :get
+  ##get 'auth/facebook', as: "auth_provider"
+  ##get 'auth/facebook/callback', to: 'crews#login'
   
-  #concern :postable do
-    resources :articles do
-      resources :comments
-      #resource :like
-      #resource :grade
-    end
-  #end
+  devise_for :crews, :controllers =>  { :omniauth_callbacks => "crews/omniauth_callbacks" }
+  #With model named Crew, with :omniauthable, :omniauth_providers => [:facebook], 
+  #Devise will create following helpers:
+  #crew_omniauth_authorize_path(:facebook)
+  #crew_omniauth_callback_path(:facebook) <- This one will never be used
 
-  #namespace :aviators do  
-  #end
+  ##devise_scope :crew do
+    ##get 'sign_in', :to => 'devise/sessions#new', :as => :new_crew_session_path
+    ##get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_crew_session_path
+  ##end
 
+  #Omniauth for facebook
+  ##get '/auth/:facebook/callback', to: 'sessions#create'
 
+  
+
+  resources :articles do
+    resources :comments
+    ##resource :like
+    ##resource :grade
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'home#index'  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
