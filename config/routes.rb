@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   ##get 'auth/facebook', as: "auth_provider"
   ##get 'auth/facebook/callback', to: 'crews#login'
   
-  devise_for :crews, :controllers => { :omniauth_callbacks => "crews/facebook_callbacks" }
+  devise_for :crews, :controllers =>  { :omniauth_callbacks => "crews/omniauth_callbacks" }
   #With model named Crew, with :omniauthable, :omniauth_providers => [:facebook], 
   #Devise will create following helpers:
   #crew_omniauth_authorize_path(:facebook)
@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   #Omniauth for facebook
   ##get '/auth/:facebook/callback', to: 'sessions#create'
+
   
+
   resources :articles do
     resources :comments
     ##resource :like

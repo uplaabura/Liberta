@@ -1,4 +1,9 @@
-<%= @crew_info.inspect %><br>
+<%= image_tag current_crew[:image] %>
+<%= current_crew[:name] %>
+<%= current_crew[:email] %><br>
+
+<%= crew_session.inspect %>
+<%= crew_signed_in?.inspect %>
 
 <%= link_to "Signout", destroy_crew_session_path, method: :delete %><br>
 

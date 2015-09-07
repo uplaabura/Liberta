@@ -20,7 +20,7 @@ class Crew < ActiveRecord::Base
     #facebook.get_object("me?fields=email,name,picture")
   #end
 
-  def self.find_record_from_omniauth_facebook(auth) #find record then update or create from omniauth_facebook
+  def self.find_info_from_omniauth_facebook(auth) #find record then update or create from omniauth_facebook
     if the_crew = Crew.where({:provider => auth.provider, :uid => auth.uid,}).first
       Crew.update( #.update is an ActiveRecord::Relation method, requires .update(id, attributes)
         the_crew[:id],
@@ -52,11 +52,10 @@ class Crew < ActiveRecord::Base
     #end
   #end
 
-  #def self.new_with_session(params, session)
-    
-    #super.tap do |crew|
+  #def self.new_with_session(params, session)    
+    #super.tap do |crew_info|
       #if crew_info = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        #crew.email = crew_info["email"] if crew.email.blank?
+        #crew_info.email = crew_info["email"] if crew.email.blank?
       #end
     #end
 
