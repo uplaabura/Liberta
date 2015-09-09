@@ -42,4 +42,10 @@ Rails.application.configure do
   # Devise mailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  Liberta::Application.config.secret_token = if Rails.env.development? or Rails.env.test?
+    ('j' * 30) # meets minimum requirement of 30 chars long
+  else
+    ENV['SECRET_TOKEN']
+  end
+
 end

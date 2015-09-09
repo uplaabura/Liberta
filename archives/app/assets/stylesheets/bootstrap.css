@@ -5,11 +5,13 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
+  height: 100%;
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 body {
+  height: 100%;
   margin: 0;
 }
 article,
@@ -1148,6 +1150,8 @@ img {
 }
 .img-circle {
   border-radius: 50%;
+  max-width: 30px;
+  max-height: 30px;
 }
 hr {
   margin-top: 20px;
@@ -5009,9 +5013,10 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
+  text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
   color: inherit;
   background-color: #eee;
 }
@@ -6803,3 +6808,11 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+/* Customized
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container-fluid{
+  height: 100%;
+}
+
