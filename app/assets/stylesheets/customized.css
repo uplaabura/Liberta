@@ -88,6 +88,11 @@
       max-height: 28px;
       margin-top: 5px; 
     }
+    .img-dots {
+      border-radius: 50%;
+      max-width: 12px;
+      max-height: 12px; 
+    }
     .pull-right {
       float: right !important; 
     }
