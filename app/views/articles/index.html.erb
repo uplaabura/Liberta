@@ -1,3 +1,26 @@
+<% content_for :twelve do %>
+  <div class="navbar-spacer"></div> <!-- navbar-spacer -->
+  <nav id="home-nav", class="navbar">
+    <div class="container">
+
+      <div class="pure-menu pure-menu-horizontal">
+          
+          <ul class="pure-menu-list pull-left"> 
+              <li class="pure-menu-item"><%= image_tag(current_crew[:image], class: 'img-circle') %></li>             
+              <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                  <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
+                  <ul class="pure-menu-children">
+                      <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+                      <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                      <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+
+  </div> <!-- container -->  
+  </nav> <!-- navbar -->
+
 <table>
   <tr>
     <th>Title</th>
@@ -18,3 +41,5 @@
 
   <%= link_to 'Home', root_path %>
 </table>
+
+<% end %>

@@ -184,14 +184,3 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 
 /* Customized 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.pure-menu-link {
-    padding: 0 0;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .2rem;
-    text-decoration: none;
-    line-height: 39px;
-    color: #222;
-}
- 

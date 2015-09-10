@@ -1,0 +1,76 @@
+/* Customized
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* iPad & PC
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (min-width: 400px) {
+  /* Customized */
+    /* From Skeleton Custom */
+    .section {
+      margin-top: 5rem auto;
+      text-align: center 
+    }
+    #home-nav > .container {
+      width: 80%; 
+    }
+    .navbar > .container {
+      width: 100%; 
+    }
+    /* Re-overiding the width 100% declaration to match size of % based container */
+    .has-docked-nav .navbar > .container {
+      width: 80%; 
+    }
+
+    /* From Pure */
+    .pure-menu-link {
+      text-transform: uppercase;
+      padding: 0 0;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .2rem;
+      text-decoration: none;
+      line-height: 39px;
+      color: #222;
+    }
+    .button {
+      margin-bottom: 5em; 
+    }
+    #nav-intro {
+      margin-right: 35px;
+    }
+    
+    /* From Bootstrap */
+    .img-circle {
+      border-radius: 50%;
+      max-width: 28px;
+      max-height: 28px;
+      margin-top: 5px; 
+    }
+    .pull-right {
+      float: right !important; 
+    }
+    .pull-left {
+      float: left !important; 
+    }
+
+    /* For googlemaps */
+    .container { 
+      padding: 0 0;
+      height: 100%; 
+    }
+    .row {
+      height: 100%; 
+    }
+    .twelve.columns {
+      height: 100%; 
+    }
+    .two.columns {
+      padding-top: 20px; 
+    }
+    .ten.columns {
+      height: 100%; 
+    }
+    #map {
+      height: 90%; 
+    }
+} /* End of @media (min-width: 400px) */

@@ -1,45 +1,91 @@
 <!-- Head
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :head do %>
 
-
-<!-- Header
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<% content_for :header do %>
-
-  <ul class="navbar-list">
-    <li class="navbar-item"><a class="navbar-link" href="#intro">Intro</a></li>
-    <li class="navbar-item"><a class="navbar-link" href="#preview">Preview</a></li>
-    <li class="navbar-item"><a class="navbar-link" href="#story">Story</a></li>
-    <li class="navbar-item pull-right">
-      <%= link_to "Sign in with Facebook", crew_omniauth_authorize_path(:facebook), class: 'pure-button' %>
-    </li>
-    <li class="navbar-item">
-      <%# crew_session.inspect %>
-      <%# crew_signed_in?.inspect %>
-    </li>
-  </ul> <!-- navbar-list -->
+  
 
 <% end %>
 
-<!-- Full content
+<!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+<!-- Twelve columns
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <% content_for :twelve do %>
 
-  <div class="container">
-    <section class="header">
-      <h4 class="title">Record your travel path</h4>
-      <h4 class="title">Reference friends' travel reviews</h4>    
-      <%= link_to "Sign in with Facebook", crew_omniauth_authorize_path(:facebook), class: 'button button-primary' %>
-    </section>  
+  <section class="section">
 
-  </div> <!-- container -->
+    <h4>The best traveling database</h4>    
+    <%= link_to "Sign in with Facebook", crew_omniauth_authorize_path(:facebook), class: 'button button-primary' %>
+
+    <div class="row">
+      <div class="six columns">
+        <%= image_tag('demo1.png', class: 'u-max-full-width') %> 
+        <p>Record your own travel experience</p>
+      </div> <!-- six columns -->
+      <div class="six columns">
+        <%= image_tag('demo1.png', class: 'u-max-full-width') %>
+        <p>Reference your friends' travel path</p>
+      </div>
+    </div> <!-- row -->    
+
+  </section> 
 
 
+
+
+  <div class="navbar-spacer"></div> <!-- navbar-spacer -->
+  <nav class="navbar">
+    <div class="container">
+
+      <div class="pure-menu pure-menu-horizontal">
+        
+        <ul class="pure-menu-list pull-left">          
+          <li class="pure-menu-item"><a id="nav-intro" class="pure-menu-link" href="#intro">Intro</a></li>
+          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link" name="menuLink1">Preview</a>
+          
+              <ul class="pure-menu-children">            
+                <li class="pure-menu-item">
+                  <%= crew_session.inspect %>  <%= crew_signed_in?.inspect %>
+                </li>
+                <li class="pure-menu-item">
+                  <%= link_to 'My Articles', articles_path, class: 'pure-menu-link' %>
+                </li>                    
+              </ul> <!-- pure-menu-children -->  
+              
+          </li>
+        
+        </ul> <!-- pure-menu-list pull-left -->
+        
+        <li class="pure-menu-item pull-right">
+          <%= link_to 'Sign in', crew_omniauth_authorize_path(:facebook), class: 'pure-menu-link' %>
+        </li>
+        
+      </div> <!-- pure-menu pure-menu-horizontal -->
+
+
+    </div> <!-- container -->  
+  </nav> <!-- navbar -->
+
+  <section class="section">
+    <h4>What is Liberta?</h4>
+
+  </section>
 
   <div id="map"><!-- Google maps lays here --></div>
 
 <% end %>
 
+
+<!-- Contents
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :content do %>
+
+
+
+<% end %>
 
 <!-- Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -62,12 +108,6 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_lgD9O7ET_xj1x46QV12qmMbO7LzG7jQ&callback=initMap">
   </script>
-
-  <!-- Skeleton  -->
-  <script type="text/javascript" async="" src="./Skeleton_files/ga.js"></script><script id="twitter-wjs" src="./Skeleton_files/widgets.js"></script><script src="./Skeleton_files/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./Skeleton_files/prettify.css">
-  <link rel="stylesheet" href="./Skeleton_files/github-prettify-theme.css">
-  <script src="./Skeleton_files/site.js"></script>
 
 <% end %>
 
