@@ -3,71 +3,58 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Moblie Specific Metas -->
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+    <!-- Fonts
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+    <!-- Assests
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-    <style type="text/css">
-      html, body { height: 100%; margin: 0; padding: 0; }
-      #googleMaps { height: 50%; }
-    </style>
-
+    <!-- Title
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= favicon_link_tag 'favicon.ico' %>
     <title>Liberta!</title>
+    <meta name="description" content="Travel DB">
+    <meta name="author" content="Jim uplaabura">
+
+    <!-- Yield head
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= yield :head %>
 
   </head>
   <body>
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        
-        <div class="navbar-header">
+<!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= yield :header %>
 
 
+<!-- Twelve columns
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
 
-        </div> <!-- navbar-header -->
+          <%= yield :twelve %>              
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-            
-   
+        </div> <!-- twelve columns -->
+      </div> <!-- row -->
+    </div> <!-- container -->
 
-            </li>
-          </ul> <!-- nav navbar-nav navbar-right -->
+<!-- Content
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= yield :content %>
 
-        </div> <!-- collapse navbar-collapse" id="bs-example-navbar-collapse-1 -->
-      
-      </div> <!-- container-fluid -->
-    </nav>
-
-    <%= yield %>
-
-    <!-- Google maps div -->
-    <div class="" id="googleMaps">
-    </div>
-    
-    <!-- Call google maps -->
-    <script>
-
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('googleMaps'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-
-    </script>
-    
-    <!-- Google maps async -->
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_lgD9O7ET_xj1x46QV12qmMbO7LzG7jQ&callback=initMap">
-    </script>
+<!-- Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= yield :misc %>     
 
   </body>
 </html>
+

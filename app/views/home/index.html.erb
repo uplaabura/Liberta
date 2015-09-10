@@ -1,12 +1,52 @@
-<%= image_tag current_crew[:image] %>
-<%= current_crew[:name] %>
-<%= current_crew[:email] %><br>
+<!-- Head
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :head do %>
 
-<%= crew_session.inspect %>
-<%= crew_signed_in?.inspect %>
+  <style type="text/css">
+    body { overflow: hidden; }
+  </style>
 
-<%= link_to "Signout", destroy_crew_session_path, method: :delete %><br>
+<% end %>
+<!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :header do %>  
 
-<%= link_to 'My Blog', articles_path %><br>
-<%= link_to 'New Article', new_article_path %>
+  <%= render 'layouts/header' %>
+
+<% end %>
+<!-- Twelve Columns
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :twelve do %>
+
+  <div id="map"><!-- Google maps lays here --></div>
+
+<% end %>
+<!-- Contents
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :content do %>
+<% end %>
+<!-- Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :misc do %>
+
+  <!-- Googlemaps init -->
+  <script>
+
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 25.079612, lng: 121.234227},
+        zoom: 12
+      });
+    }
+
+  </script>
+
+  <!-- Google maps async -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_lgD9O7ET_xj1x46QV12qmMbO7LzG7jQ&callback=initMap">
+  </script>
+
+<% end %>
+
 
