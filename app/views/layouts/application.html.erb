@@ -18,6 +18,7 @@
 
     <!-- Title
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= favicon_link_tag 'favicon.ico' %>
     <title>Liberta!</title>
     <meta name="description" content="Travel DB">
     <meta name="author" content="Jim uplaabura">
@@ -31,17 +32,10 @@
 
 <!-- Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="navbar-spacer"></div>
-      <div class="navbar">
-        <div class="container">  
-      
-         <%= yield :header %>
+    <%= yield :header %>
 
-        </div> <!-- container -->  
-      </div> <!-- navbar -->
-    </div> <!-- navbar-spacer -->   
 
-<!-- Twelve
+<!-- Twelve columns
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container">
       <div class="row">
@@ -53,9 +47,9 @@
       </div> <!-- row -->
     </div> <!-- container -->
 
-<!-- Contents
+<!-- Content
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <%= yield :contents %>
+    <%= yield :content %>
 
 <!-- Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->

@@ -359,7 +359,7 @@ form {
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.u-full-width {
+.full-width {
   width: 100%;
   box-sizing: border-box; }
 .u-max-full-width {
@@ -419,47 +419,3 @@ there.
 
 
 
-/* Customized
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* From Skeleton Custom */
-
-/* From Pure */
-
-/* From Bootstrap */
-.img-circle {
-  border-radius: 50%;
-  max-width: 28px;
-  max-height: 28px;
-  margin-top: 5px;
-}
-.pull-right {
-  float: right !important;
-}
-.pull-left {
-  float: left !important;
-}
-/* For googlemaps */
-
-.container { 
-  padding: 0 0;
-  height: 100%;
-}
-.row {
-  height: 100%;
-}
-.twelve.columns {
-  padding-top: 10px;
-  height: 100%;
-  overflow: hidden;
-}
-.two.columns {
-  padding-top: 20px;
-}
-.ten.columns {
-  padding-top: 10px;
-  height: 100%;
-  overflow: hidden;
-}
-#map {
-  height: 100%;
-}

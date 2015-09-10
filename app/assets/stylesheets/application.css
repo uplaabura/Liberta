@@ -10,7 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require_tree ./pure-release-0.6.0
+ *= require_tree ./skeleton-2.0.4
+ *= require ./customized
+ *= require ./customized-tablet
  *= require_self
  *
  */

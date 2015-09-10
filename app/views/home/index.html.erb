@@ -1,55 +1,30 @@
-<!-- Header
+<!-- Head
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<% content_for :header do %>
- 
-  <div class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list pull-left">
-      
-      <li class="pure-menu-item">
-        <%= image_tag(current_crew[:image], class: 'img-circle') %>
-      </li>
-      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-        <a href="#" class="pure-menu-link"><%= current_crew[:name] %></a>
-      </li>
-      
-      <ul class="pure-menu-children">
-        <li class="pure-menu-item">
-          <%= crew_session.inspect %>  <%= crew_signed_in?.inspect %>
-        </li>
-        <li class="pure-menu-item">
-          <%= link_to 'My Articles', articles_path, class: 'pure-menu-link' %>
-        </li>          
-      </ul> 
+<% content_for :head do %>
 
-    </ul> 
-    
-    <ul class="pure-menu-list pull-right">
-      <li class="pure-menu-item pure-menu-allow-hover">
-        <%= link_to "SIGNOUT", destroy_crew_session_path, method: :delete, class: 'pure-menu-link' %>
-      </li>
-    </ul> <!-- pure-menu-list pull-left -->
-  </div> <!-- pure-menu pure-menu-horizontal -->
+  <style type="text/css">
+    body { overflow: hidden; }
+  </style>
 
 <% end %>
+<!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :header do %>  
 
+  <%= render 'layouts/header' %>
 
-<!-- Twelve Content
+<% end %>
+<!-- Twelve Columns
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <% content_for :twelve do %>
 
   <div id="map"><!-- Google maps lays here --></div>
 
 <% end %>
-
-
-<!-- Left 2 columns
+<!-- Contents
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-
-<!-- Right 10 columns
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-
+<% content_for :content do %>
+<% end %>
 <!-- Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <% content_for :misc do %>

@@ -22,22 +22,7 @@ $(document).ready(function() {
     $window.on('resize', resize)
     $popoverLink.on('click', openPopover)
     $document.on('click', closePopover)
-    $('a[href^="#"]').on('click', smoothScroll)
     buildSnippets();
-  }
-
-  function smoothScroll(e) {
-    e.preventDefault();
-    $(document).off("scroll");
-    var target = this.hash,
-        menu = target;
-    $target = $(target);
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top-40
-    }, 0, 'swing', function () {
-        window.location.hash = target;
-        $(document).on("scroll", onScroll);
-    });
   }
 
   function openPopover(e) {
@@ -92,3 +77,7 @@ $(document).ready(function() {
   init();
 
 });
+
+
+/* Customized
+–––––––––––––––––––––––––––––––––––––––––––––––––– */

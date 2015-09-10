@@ -1,0 +1,118 @@
+/* Customized
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* iPhone and global customized settings
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+   /* Navbar */
+  .navbar + .docs-section {
+    border-top-width: 0; }
+  .navbar,
+  .navbar-spacer {
+    display: block;
+    width: 100%;
+    height: 39px;
+    background: #fff;
+    z-index: 99;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee; }
+  .navbar-spacer {
+    display: none; }
+  .navbar > .container {
+    width: 95%; }
+  .navbar-list {
+    list-style: none;
+    margin-bottom: 0; }
+  .navbar-item {
+    position: relative;
+    float: left;
+    margin-bottom: 0; }
+  .navbar-link {
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    margin-right: 35px;
+    text-decoration: none;
+    line-height: 39px;
+    color: #222; }
+  .navbar-link.active {
+    color: #33C3F0; }
+  .has-docked-nav .navbar {
+    position: fixed;
+    top: 0;
+    left: 0; }
+  .has-docked-nav .navbar-spacer {
+    display: block; }
+  /* Re-overiding the width 100% declaration to match size of % based container */
+  .has-docked-nav .navbar > .container {
+    width: 95%; }
+
+  /* Customized */
+    /* From Skeleton Custom */
+    .section {
+      margin: 2rem auto;
+      text-align: center 
+    }
+    #home-nav > .container {
+      width: 95%; 
+    }
+    .navbar > .container {
+      width: 95%; 
+    }
+
+    /* From Pure */
+    .pure-menu-link {
+      text-transform: uppercase;
+      padding: 0 0;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .1rem;
+      text-decoration: none;
+      line-height: 39px;
+      color: #222;
+    }
+    #crew-name {
+      letter-spacing: .1rem;
+    }
+    .button {
+      margin-bottom: 2em; 
+    }
+    #nav-intro {
+      margin-right: 10px;
+    }
+
+    /* From Bootstrap */
+    .img-circle {
+      border-radius: 50%;
+      max-width: 28px;
+      max-height: 28px;
+      margin-top: 5px; 
+    }
+    .pull-right {
+      float: right !important; 
+    }
+    .pull-left {
+      float: left !important; 
+    }
+    
+    /* For googlemaps */
+    .container { 
+      padding: 0 0;
+      height: 100%; 
+    }
+    .row {
+      height: 100%; 
+    }
+    .twelve.columns {
+      height: 100%; 
+    }
+    .two.columns {
+      padding-top: 20px; 
+    }
+    .ten.columns {
+      height: 100%; 
+    }
+    #map {
+      height: 90%; 
+    }     
+      

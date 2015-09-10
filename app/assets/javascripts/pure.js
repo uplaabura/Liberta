@@ -169,4 +169,6 @@
 
     initDropdowns();
 
-}(this, this.document));
+
+}(this, this.document)); /* End of (function (window, document) */
+
