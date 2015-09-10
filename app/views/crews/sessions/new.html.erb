@@ -54,15 +54,24 @@
                   <%= link_to 'My Articles', articles_path, class: 'pure-menu-link' %>
                 </li>                    
               </ul> <!-- pure-menu-children -->  
-              
+
           </li>
         
         </ul> <!-- pure-menu-list pull-left -->
         
-        <li class="pure-menu-item pull-right">
-          <%= link_to 'Sign in', crew_omniauth_authorize_path(:facebook), class: 'pure-menu-link' %>
-        </li>
-        
+         <ul class="pure-menu-list pull-right">
+          
+          <li class="pure-menu-item">
+            <% if crew_signed_in? == true %>
+              <%= image_tag('orange-dot.png', class: 'img-circle') %>
+            <% else %>
+              <%= image_tag('red-dot.png', class: 'img-circle') %>
+            <% end %>
+          </li>
+          <li class="pure-menu-item">
+            <%= link_to 'Sign in', crew_omniauth_authorize_path(:facebook), class: 'pure-menu-link' %>
+          </li>
+        </ul> <!-- pure-menu-list pull-right -->
       </div> <!-- pure-menu pure-menu-horizontal -->
 
 

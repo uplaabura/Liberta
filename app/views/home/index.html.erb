@@ -7,47 +7,13 @@
   </style>
 
 <% end %>
-
 <!-- Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <% content_for :header do %>  
 
-  <div class="navbar-spacer"></div> <!-- navbar-spacer -->
-  <nav id="home-nav", class="navbar">
-    <div class="container">
-
-      <div class="pure-menu pure-menu-horizontal">
-
-        <ul class="pure-menu-list pull-left">                  
-          <li class="pure-menu-item"><%= image_tag(current_crew[:image], class: 'img-circle') %></li>          
-          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">            
-            
-            <a href="#" id="crew-name" class="pure-menu-link"><%= current_crew[:name] %></a>
-            <ul class="pure-menu-children">            
-              <li class="pure-menu-item">
-                <%= crew_session.inspect %>  <%= crew_signed_in?.inspect %>
-              </li>
-              <li class="pure-menu-item">
-                <%= link_to 'My Articles', articles_path, class: 'pure-menu-link' %>
-              </li>                    
-            </ul> <!-- pure-menu-children -->
-
-          </li> <!-- pure-menu-item pure-menu-has-children pure-menu-allow-hover -->
-        </ul> <!-- pure-menu-list pull-left -->
-        
-        <li class="pure-menu-item pull-right">
-          <%= link_to "Sign out", destroy_crew_session_path, method: :delete, class: 'pure-menu-link' %>
-        </li>
-        
-      </div> <!-- pure-menu pure-menu-horizontal -->
-
-
-    </div> <!-- container -->  
-  </nav> <!-- navbar -->
+  <%= render 'layouts/header' %>
 
 <% end %>
-
-
 <!-- Twelve Columns
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <% content_for :twelve do %>
@@ -55,11 +21,10 @@
   <div id="map"><!-- Google maps lays here --></div>
 
 <% end %>
-
-
 <!-- Contents
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
+<% content_for :content do %>
+<% end %>
 <!-- Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <% content_for :misc do %>
