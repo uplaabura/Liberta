@@ -1,23 +1,54 @@
+<!-- Head
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :head do %>
 
-<!-- Show articles -->
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<% end %>
+<!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :header do %>  
 
-<!-- Show comments -->
-<h2>Comments</h2>
-<%= render 'comments/comment' %>
+  <%= render 'layouts/header' %>
 
-<!-- Edit comments -->
-<h2>Add a comment</h2>
-<%= render 'comments/form' %>
+<% end %>
+<!-- Twelve Columns
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :twelve do %>
 
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'New Article', new_article_path %>
-<%= link_to 'My Articles', articles_path %>
+  <!-- Show articles -->
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+   
+  <p>
+    <strong>Text:</strong>
+    <%= @article.content %>
+  </p>
+
+  <!-- Show comments -->
+  <h2>Comments</h2>
+  <%= render 'comments/comment' %>
+
+  <!-- Edit comments -->
+  <h2>Add a comment</h2>
+  <%= render 'comments/cform' %>
+
+  <%= link_to 'Edit', edit_article_path(@article) %>
+  <%= link_to 'New Article', new_article_path %>
+
+<% end %>
+<!-- Contents
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :content do %>
+<% end %>
+<!-- Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :misc do %>
+
+  
+
+<% end %>
+
+
+
+

@@ -15,13 +15,11 @@
   <% end %>
 
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.date_select :selected_date, :order => [:day, :month, :year] %>  
   </p>
  
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :content %>
   </p>
  
   <p>

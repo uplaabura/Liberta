@@ -1,4 +1,6 @@
 class Crew < ActiveRecord::Base
+  has_many :articles
+  has_many :comments
 
   # Include default devise modules. 
   devise  :database_authenticatable,
