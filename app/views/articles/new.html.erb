@@ -1,5 +1,36 @@
-<h1>New article</h1>
+<!-- Head
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :head do %>
 
-<%= render 'form' %>
+<% end %>
+<!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :header do %>  
 
-<%= link_to 'My Articles', articles_path %>
+  <%= render 'layouts/header' %>
+
+<% end %>
+<!-- Twelve Columns
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :twelve do %>
+  
+  <section class="section">
+    <%= render 'aform' %>  
+  </section>
+
+<% end %>
+<!-- Contents
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :content do %>
+<% end %>
+<!-- Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<% content_for :misc do %>
+
+  
+
+<% end %>
+
+
+
+

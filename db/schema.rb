@@ -11,24 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906105509) do
+ActiveRecord::Schema.define(version: 20150911043202) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "content"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.float    "lat"
+    t.float    "lng"
+    t.date     "selected_date"
+    t.integer  "thunder"
+    t.integer  "crew_id"
   end
+
+  add_index "articles", ["crew_id"], name: "index_articles_on_crew_id"
 
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
-    t.text     "body"
+    t.text     "content"
     t.integer  "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "crew_id"
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+  add_index "comments", ["crew_id"], name: "index_comments_on_crew_id"
 
   create_table "crews", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

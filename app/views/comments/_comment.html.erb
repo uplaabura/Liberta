@@ -2,8 +2,7 @@
 
 <% @article.comments.each do |c| %>
 	<p>
-		<strong>Comment:</strong>
-		<%= c.body %>
+		<%= c.content %>
 	
   		<%= link_to 'Delete', article_comment_path(@article, c),
                method: :delete,
