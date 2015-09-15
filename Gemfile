@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'therubyracer'
 # Authentication solution
 gem 'devise'
 gem 'omniauth'
@@ -8,12 +7,13 @@ gem 'omniauth-facebook'
 # Facebook API lib
 ##gem "koala", "~> 2.2"
 # Googlemaps
-gem 'geocoder'
-gem 'gmaps4rails'
+##gem 'geocoder'
+##gem 'gmaps4rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.0.0'
+##gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
